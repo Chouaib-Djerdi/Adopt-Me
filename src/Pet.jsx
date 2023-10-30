@@ -7,6 +7,7 @@
 //     React.createElement("h2", {}, props.breed),
 //   ]);
 // };
+import { Link } from "react-router-dom";
 
 const Pet = (props) => {
   const { name, animal, breed, images, location, id } = props;
@@ -16,7 +17,7 @@ const Pet = (props) => {
     hero = images[0];
   }
   return (
-    <a href={`/details/${id}`} className="pet">
+    <Link to={`/details/${id}`} className="pet">
       <div className="image-container">
         <img src={hero} alt={name} />
       </div>
@@ -26,7 +27,7 @@ const Pet = (props) => {
           {animal} - {breed} - {location}
         </h2>
       </div>
-    </a>
+    </Link>
   );
 };
 
